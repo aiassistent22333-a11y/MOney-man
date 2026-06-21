@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENESIS SYSTEM // Официальный Доступ</title>
+    <!-- Tailwind CSS для чистой и премиальной верстки -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Премиальные шрифты: Cinzel для заголовков, Montserrat для текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        genesis: '#00ff88',
+                        genesisDark: '#02c76b',
+                        darkBg: '#030507',
+                        vipGold: '#ffd700',
+                        vipGoldDark: '#b8860b'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030507;
+            overflow-x: hidden;
+        }
+        /* Тонкое неоновое свечение для заголовков */
+        .neon-text {
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+        .neon-text-gold {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        /* Эффект матового стекла (Glassmorphism) */
+        .glass-panel {
+            background: rgba(8, 12, 16, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 255, 136, 0.02);
+        }
+        .glass-panel-vip {
+            background: rgba(14, 12, 8, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 215, 0, 0.03);
+        }
+        /* Плавное парение треугольника в воздухе */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-montserrat text-slate-300 min-h-screen relative selection:bg-genesis selection:text-black">
+
+    <!-- Фоновый холст для тлеющих, дымящихся долларов / зеленых искр -->
+    <canvas id="smokeCanvas"></canvas>
+
+    <!-- Основной контейнер поверх анимации -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 py-8 sm:py-12 flex flex-col min-h-screen justify-between">
+        
+        <!-- Toast-уведомления -->
+        <div id="toast-container" class="fixed top-5 right-5 z-50 pointer-events-none flex flex-col gap-2"></div>
+
+        <!-- Upper Cap -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-genesis/20 bg-genesis/5 text-genesis text-[10px] font-semibold uppercase tracking-widest">
+                <span class="w-1.5 h-1.5 rounded-full bg-genesis animate-pulse"></span>
+                Prime 2026
+            </div>
+        </header>
+
+        <!-- Центральный парящий логотип и заголовок -->
+        <section class="text-center flex flex-col items-center justify-center flex-grow mb-12">
+            
+            <!-- Масонский треугольник (Всевидящее Око с доллара) в SVG -->
+            <div class="animate-float mb-6 relative select-none">
+                <svg class="w-28 h-28 text-genesis drop-shadow-[0_0_25px_rgba(0,255,136,0.6)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Внешний треугольник -->
+                    <polygon points="50,15 90,85 10,85" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" />
+                    <!-- Тонкие лучи света из центра -->
+                    <line x1="50" y1="15" x2="50" y2="5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" />
+                    <line x1="10" y1="85" x2="2" y2="93" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" />
+                    <line x1="90" y1="85" x2="98" y2="93" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" />
+                    <!-- Глаз в центре -->
+                    <path d="M32 55 C40 45, 60 45, 68 55 C60 65, 40 65, 32 55 Z" stroke="currentColor" stroke-width="2" />
+                    <circle cx="50" cy="55" r="5" stroke="currentColor" stroke-width="2" fill="#030507" />
+                    <circle cx="50" cy="55" r="1.5" fill="currentColor" />
+                </svg>
+            </div>
+
+            <h1 class="font-cinzel text-white text-3xl sm:text-5xl font-extrabold tracking-widest mb-10">
+                GENESIS <span class="text-genesis neon-text">SYSTEM</span>
+            </h1>
+
+            <!-- МАНИФЕСТ О СВОБОДЕ И ДЕНЬГАХ -->
+            <div class="max-w-4xl mx-auto mb-16 text-center px-4">
+                <p class="text-lg sm:text-2xl lg:text-3xl text-white font-extrabold leading-snug mb-6 uppercase tracking-wider">
+                    ДАВАЙ НАЧИСТОТУ: ВСЁ, О ЧЁМ ТЫ МЕЧТАЕШЬ — КРУТЫЕ ТАЧКИ, ПОЛНАЯ СВОБОДА И ЖИЗНЬ БЕЗ ГРАНИЦ — УПИРАЕТСЯ В ОДНО ПРОСТОЕ СЛОВО. <span class="text-genesis font-black neon-text">ДЕНЬГИ</span>.
+                </p>
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                    99% твоих проблем прямо сейчас существуют только из-за нехватки денег. Как только ты научишься их зарабатывать — все трудности просто растают. Деньги — это твоя свобода и твоя суперсила. Хватит смотреть со стороны, как другие берут всё лучшее. Время забрать своё.
+                </p>
+            </div>
+
+            <!-- Сетка из двух блоков: 1 колонка на мобилках, 2 колонки на ПК -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl items-start">
+                
+                <!-- БЛОК 1: Дроп-сервисинг (Мануал) -->
+                <div class="glass-panel rounded-2xl p-6 sm:p-8 text-left transition-all duration-300 flex flex-col justify-between h-full min-h-[520px]">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-slate-900 pb-3">
+                            <h2 class="text-white font-cinzel text-base sm:text-lg font-bold uppercase tracking-wider">
+                                Перепродажа услуг
+                            </h2>
+                            <span class="text-[10px] bg-genesis/10 text-genesis px-2.5 py-0.5 rounded-full border border-genesis/20 uppercase font-semibold">Доступно всем</span>
+                        </div>
+                        
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                            Вся диджитал-индустрия держится на одном правиле: у бизнеса есть проблемы, и они готовы платить тем, кто их решает. Чтобы зарабатывать на этом, вам не нужно самому обладать сложными техническими навыками. 
+                            <br><br>
+                            Вы выступаете <strong class="text-genesis">архитектором сделки</strong>. Находите клиента, выявляете его затык через простой диалог, передаете задачу профильному исполнителю и забираете свои <strong class="text-white">50-70% прибыли</strong> в качестве комиссии.
+                        </p>
+
+                        <!-- Что внутри мануала -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-genesis mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>Пошаговый мануал:</strong> От первого контакта до получения денег на карту.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-genesis mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>Готовые скрипты переписок:</strong> Что писать клиентам, чтобы они соглашались на диалог без давления на «боли».</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-genesis mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>База исполнителей:</strong> Где находить проверенных профи, которые сделают работу за вас.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Оплата блока 1 -->
+                    <div>
+                        <button onclick="triggerPayment()" class="w-full bg-genesis hover:bg-genesisDark text-slate-950 font-bold py-4 rounded-xl text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-genesis/10 hover:shadow-genesis/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bolt"></i> <span id="paymentBtnText">Получить мануал за 999 ₽</span>
+                        </button>
+                        <span class="block text-center text-[9px] text-slate-500 mt-3 tracking-widest uppercase">
+                            Доступ открывается мгновенно после оплаты
+                        </span>
+                    </div>
+                </div>
+
+                <!-- БЛОК 2: VIP Банковский арбитраж -->
+                <div class="glass-panel-vip rounded-2xl p-6 sm:p-8 text-left transition-all duration-300 flex flex-col justify-between h-full min-h-[520px]">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-amber-950 pb-3">
+                            <h2 class="text-vipGold font-cinzel text-base sm:text-lg font-bold uppercase tracking-wider neon-text-gold">
+                                VIP СВЯЗКИ
+                            </h2>
+                            <span class="text-[10px] bg-vipGold/10 text-vipGold px-2.5 py-0.5 rounded-full border border-vipGold/20 uppercase font-semibold">Эксклюзив</span>
+                        </div>
+                        
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                            Официальный и самый прибыльный способ заработка на банковском секторе. Крупнейшие банки РФ (Альфа, Т-Банк, ВТБ) платят огромные партнерские вознаграждения за привлечение клиентов на бесплатные продукты.
+                            <br><br>
+                            Вы получаете <strong class="text-vipGold">готовые связки</strong>: как приводить клиентов на регистрацию бесплатного ИП или оформление дебетовых карт и забирать от <strong class="text-white">3 000 до 15 000 ₽ за одну сделку</strong> напрямую от банков.
+                        </p>
+
+                        <!-- Что внутри VIP направления -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-star text-vipGold mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>Вход 10 000 ₽</strong> либо полностью <strong>БЕСПЛАТНО</strong> за регистрацию ИП по моей ссылке.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-star text-vipGold mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>Прямые выплаты:</strong> Чистые деньги на вашу карту напрямую от банков-партнеров.</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-star text-vipGold mt-1 text-xs flex-shrink-0"></i>
+                                <p class="text-xs text-slate-400"><strong>Личное ведение:</strong> Пошагово координирую вас до первой выплаты в Telegram.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Связь по блоку 2 -->
+                    <div>
+                        <button onclick="contactTelegram()" class="w-full bg-vipGold hover:bg-vipGoldDark text-slate-950 font-bold py-4 rounded-xl text-xs uppercase tracking-widest transition-all duration-300 shadow-lg shadow-vipGold/10 hover:shadow-vipGold/20 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-telegram text-sm"></i> <span id="tgBtnText">Написать в Telegram</span>
+                        </button>
+                        <span class="block text-center text-[9px] text-slate-500 mt-3 tracking-widest uppercase">
+                            Обсудить условия и получить связки лично
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Подвал -->
+        <footer class="text-center text-[10px] text-slate-600 border-t border-slate-900/60 pt-6">
+            GENESIS PLATFORM PROTOCOL • v1.0 • ALL RIGHTS RESERVED
+        </footer>
+
+    </div>
+
+    <!-- СКРИПТЫ: Canvas-анимация дыма / тлеющего пепла долларов -->
+    <script>
+        // --- 1. АНИМАЦИЯ ТЛЕЮЩИХ ДОЛЛАРОВ НА CANVAS ---
+        const canvas = document.getElementById('smokeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Класс тлеющих долларовых искр / пепла
+        class Ember {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * height; // Случайное распределение при старте
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + Math.random() * 20;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedY = -(Math.random() * 1.2 + 0.4); // Скорость вверх
+                this.speedX = Math.random() * 0.8 - 0.4;    // Небольшое шатание в стороны
+                this.alpha = Math.random() * 0.6 + 0.4;
+                this.decay = Math.random() * 0.0025 + 0.001; // Постепенное затухание
+                this.glowing = Math.random() > 0.5;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.alpha -= this.decay;
+
+                if (this.y < -10 || this.alpha <= 0) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                
+                // Цвет зеленого неонового доллара с эффектом тления
+                ctx.fillStyle = `rgba(0, 255, 136, ${this.alpha})`;
+                
+                if (this.glowing) {
+                    ctx.shadowColor = '#00ff88';
+                    ctx.shadowBlur = 6;
+                }
+                
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        const embers = [];
+        const emberCount = 55;
+
+        for (let i = 0; i < emberCount; i++) {
+            embers.push(new Ember());
+        }
+
+        // Анимационный цикл
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            for (let i = 0; i < embers.length; i++) {
+                embers[i].update();
+                embers[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        // Запуск анимации при полной загрузке DOM
+        window.onload = function() {
+            animate();
+        };
+
+        // --- 2. СИСТЕМА ПЛАТЕЖЕЙ И КНОПОК ---
+        function triggerPayment() {
+            showToast(`Перенаправление на оплату (999 ₽)...`);
+            
+            setTimeout(() => {
+                window.open('https://app.lava.top/products/c208ca4c-54a3-44e6-ba9d-fa54c2d330af', '_blank');
+            }, 1000);
+        }
+
+        // Клик по кнопке Telegram с автоматическим набором готового сообщения
+        function contactTelegram() {
+            showToast(`Перенаправление к @kirillver...`);
+            
+            // Формируем текст сообщения и кодируем его для корректной передачи в URL
+            const textMessage = "Привет, Кирилл. Хочу ебать нищету, и зарабатывать деньги на банках";
+            const encodedText = encodeURIComponent(textMessage);
+            const tgUrl = `https://t.me/kirillver?text=${encodedText}`;
+            
+            setTimeout(() => {
+                window.open(tgUrl, '_blank');
+            }, 1000);
+        }
+
+        // --- 3. СИСТЕМА УВЕДОМЛЕНИЙ (TOASTS) ---
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            toast.className = "p-4 rounded-xl border border-genesis/30 bg-slate-950/95 text-white backdrop-blur-md shadow-2xl transition-all duration-500 transform translate-y-5 opacity-0 flex items-center gap-3 w-80 font-montserrat text-xs";
+            
+            toast.innerHTML = `
+                <i class="fa-solid fa-circle-check text-genesis text-base"></i>
+                <div class="flex-grow font-medium leading-relaxed">${message}</div>
+            `;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-5', 'opacity-0');
+            }, 10);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-[-20px]');
+                setTimeout(() => {
+                    toast.remove();
+                }, 500);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
